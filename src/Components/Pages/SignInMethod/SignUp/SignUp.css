@@ -1,0 +1,20 @@
+/* .sdw1 {
+    border-radius: 50px;
+    background: #c45f5f;
+    box-shadow: 20px 20px 60px #a75151,
+        -20px -20px 60px #e16d6d;
+} */
+
+/* .sdw{
+    border-radius: 34px;
+background: #c45f5f;
+box-shadow: inset 16px 16px 22px #9f4d4d,
+            inset -16px -16px 22px #e97171;
+} */
+
+.sdw{
+    border-radius: 34px;
+background: #c45f5f;
+box-shadow: inset 16px 16px 22px #ab5353,
+            inset -16px -16px 22px #dd6b6b;
+}

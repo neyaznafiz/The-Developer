@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import './SignUp.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
 import Loading from '../../../Shared/Loading/Loading';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -13,19 +14,19 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, errorForUpdateProfile] = useUpdateProfile(auth);
 
     const navigate = useNavigate()
 
 
-    const navigateLogin = event => {
+    const navigateLogin = () => {
         navigate('/login')
     }
 
     let errorElement
-    if (error) {
+    if (errorForUpdateProfile) {
         errorElement = <div className='border border-danger pt-3 mb-3 col-5 mx-auto text-bold fw-bold' style={{ fontFamily: 'monospace' }}>
             <p className='text-danger text-center'>Error: {error?.message}</p>
         </div>
@@ -37,8 +38,8 @@ const SignUp = () => {
     }
 
     if (user) {
-    //     navigate('/home')
-    console.log('user', user);
+        //     navigate('/home')
+        console.log('user', user);
     }
 
 
@@ -48,44 +49,53 @@ const SignUp = () => {
         const email = event.target.email.value
         const password = event.target.password.value
 
-        
-           await createUserWithEmailAndPassword(email, password)
-           await updateProfile({ displayName: name  });
-           alert('Updated profile');
-           navigate('/')
-    
+
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: name });
+        toast('Updated profile');
+        navigate('/')
+
     }
 
 
     return (
-        <div>
-            <div>
-                Please SignUp
-            </div>
+        <div className='pt-24 pb-40 bg-slate-300'>
 
-            <div>
+            <h2 className='font-semibold text-3xl text-center py-20'><span className='text-5xl'>T</span>he Developer</h2>
 
-                <form onSubmit={handleSignUp} className='grid'>
+            <div className='flex justify-evenly'>
 
-                    <input type="text" name='name' placeholder='Name' required className='border' />
-
-                    <input type="email" name="email" placeholder='Email' id="" required className='border' />
-
-                    <input type="password" name="password" placeholder='Password' id="" required className='border' />
-
-                    <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border' />
-
-                    <input type="submit" value='Sign Up' />
-
-                </form>
                 <div>
-                    Already have an account ? <Link to='/login' onClick={navigateLogin}>Login</Link>
+
+                    <form onSubmit={handleSignUp} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 sdw'>
+
+                        <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md sdw' />
+
+                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md sdw' />
+
+                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md sdw' />
+
+                        <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md sdw' />
+
+                        {errorElement}
+
+                        <input type="submit" value='Sign Up' className='text-lg font-semibold opacity-80 text-white' />
+
+                    </form>
+
+                    <div className='pt-2 font-medium text-center'>
+                        Already have an account ? <Link to='/login' className='border-b' onClick={navigateLogin}>Log In</Link>
+                    </div>
                 </div>
+
+                <div className=''>
+                    <SocialSignUp></SocialSignUp>
+                </div>
+
             </div>
 
-            <div className='border'>
-                <SocialSignUp></SocialSignUp>
-            </div>
+
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

@@ -35,9 +35,9 @@ const Header = () => {
 
                     {
                         !user ?
-                        <CoustomLink to='/signup' className='px-2 py-1'> <RiLoginCircleLine className='text-2xl'></RiLoginCircleLine> </CoustomLink>
+                        <CoustomLink to='/signup' className='px-2 py-1'> <RiLoginCircleLine className='text-2xl '></RiLoginCircleLine> </CoustomLink>
                         :
-                        <CoustomLink to='/home' className='px-2 py-1' onClick={handleSignOut}> <BiLogOutCircle className='text-2xl' ></BiLogOutCircle> </CoustomLink>
+                        <CoustomLink to='/' className='px-2 py-1' onClick={handleSignOut}> <BiLogOutCircle className='text-2xl' ></BiLogOutCircle> </CoustomLink>
                     }
 
                 </div>
