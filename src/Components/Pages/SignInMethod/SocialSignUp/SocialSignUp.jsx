@@ -3,6 +3,7 @@ import auth from '../../../../Firebase/firebase.init'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
+import { ToastContainer, toast } from 'react-toastify';
 import { useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 
 const SocialSignUp = () => {
@@ -12,10 +13,26 @@ const SocialSignUp = () => {
     const [signInWithFacebook, userFacebook, loadingFacebook, errorFacebook] = useSignInWithFacebook(auth);
 
     const [signInWithTwitter, userFaceTwitter, loadingTwitter, errorTwitter] = useSignInWithTwitter(auth);
+
+
+    if (errorGoogel || errorFacebook || errorTwitter) {
+        return (
+            <div>
+              <p>Error: { errorGoogel?.message } { errorFacebook?.message } { errorTwitter?.message }</p>
+            </div>
+          );
+    }
+  
+
+
+if (loadingGoogle || loadingFacebook || loadingTwitter) {
+  return <p>Loading...</p>
+}
+
     return (
         <div>
 
-<div>
+            <div>
                 <button onClick={() => signInWithGoogle()} className=' rounded-full flex pl-6 pr-5 py-2 text-white bg-red-500'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
             </div>
 

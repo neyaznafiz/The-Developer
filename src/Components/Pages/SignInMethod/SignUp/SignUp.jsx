@@ -29,7 +29,7 @@ const SignUp = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='border'>
                 <SocialSignUp></SocialSignUp>
             </div>
         </div>
