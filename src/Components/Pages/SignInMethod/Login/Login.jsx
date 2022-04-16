@@ -20,6 +20,9 @@ const Login = () => {
     event.preventDefault()
 
     const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    signInWithEmailAndPassword(email, password)
 
 
   }
@@ -32,11 +35,11 @@ const Login = () => {
       </div>
 
       <div>
-        <form className='grid'>
+        <form onSubmit={handleLogIn} className='grid'>
 
-          <input type="email" name="email" placeholder='Email' id="" required className='border' />
+          <input ref={emailRef} type="email" name="email" placeholder='Email' id="" required className='border' />
 
-          <input type="password" name="password" placeholder='Password' id="" required className='border' />
+          <input ref={passwordRef} type="password" name="password" placeholder='Password' id="" required className='border' />
 
           <input type="submit" value='Log In' />
 

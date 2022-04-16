@@ -24,7 +24,7 @@ const Header = () => {
             <div className='flex justify-between'>
 
                 <div className='pt-5'>
-                    <Link to='/' className='border-l rounded-bl-md border-b px-2 py-2 font-semibold'><span className='text-3xl font tracking-tighter'>T</span>HE DEVELOPER</Link>
+                    <Link to='/' className='border-l rounded-bl-md border-b px-2 py-2 font-semibold '><span className='text-3xl font tracking-tighter'>T</span>HE DEVELOPER</Link>
                 </div>
 
                 <div className='flex gap-11'>

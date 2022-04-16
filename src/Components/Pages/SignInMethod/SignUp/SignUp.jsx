@@ -61,7 +61,7 @@ const SignUp = () => {
     return (
         <div className='pt-24 pb-40 bg-slate-300'>
 
-            <h2 className='font-semibold text-3xl text-center py-20'><span className='text-5xl'>T</span>he Developer</h2>
+            <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>T</span>he Developer</h2>
 
             <div className='flex justify-evenly'>
 
@@ -69,13 +69,13 @@ const SignUp = () => {
 
                     <form onSubmit={handleSignUp} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 sdw'>
 
-                        <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md sdw' />
+                        <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
 
-                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md sdw' />
+                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
 
-                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md sdw' />
+                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
 
-                        <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md sdw' />
+                        <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md sdw out outline-none text-white' />
 
                         {errorElement}
 
@@ -84,7 +84,7 @@ const SignUp = () => {
                     </form>
 
                     <div className='pt-2 font-medium text-center'>
-                        Already have an account ? <Link to='/login' className='border-b' onClick={navigateLogin}>Log In</Link>
+                        Already have an account ? <Link to='/login' className='hover:border-b-4 border-black px-1' onClick={navigateLogin}>Log In </Link>
                     </div>
                 </div>
 
