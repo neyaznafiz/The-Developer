@@ -43,8 +43,8 @@ const Header = () => {
 
                 </div>
 
-                    <div className='pt-7'>
-                    <Link to='/about' className='px-2 py- border-b-4 rounded-b-lg border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter text-slate-500'>T</span></Link>
+                    <div className='pt-6'>
+                    <Link to='/about' className='px-2 pb-1 border-b-4 rounded-b-lg border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter text-slate-500'>T</span></Link>
                     </div>
                     
             </div>

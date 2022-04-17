@@ -1,6 +1,17 @@
+
 .coustom-shadow{
     border-radius: 34px;
-background: #c45f5f;
-box-shadow: inset 16px 16px 22px #ab5353,
-            inset -16px -16px 22px #dd6b6b;
+background: #545f83;
+box-shadow: inset 15px 15px 30px #424a66,
+            inset -15px -15px 30px #6674a0;
+
+       
+}
+
+.img-shadow{
+border-radius: 50%;
+background: linear-gradient(145deg, #3d3f58, #33354a);
+box-shadow:  26px 26px 51px #2f3043,
+             -26px -26px 51px #434661;
+
 }

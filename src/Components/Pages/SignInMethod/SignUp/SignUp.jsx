@@ -18,6 +18,7 @@ const SignUp = () => {
 
     const [updateProfile, updating, errorForUpdateProfile] = useUpdateProfile(auth);
 
+
     const navigate = useNavigate()
 
 
