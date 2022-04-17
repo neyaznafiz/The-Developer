@@ -60,12 +60,12 @@ const SignUp = () => {
 
 
     return (
-        <div className='pt-20 pb-36 bg-slate-300'>
+        <div className='pt-4 lg:pt-20 md:pt-18 lg:pb-36 md:pb-30 pb-10 bg-slate-300'>
 
           
-            <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>S</span>ignUp Please</h2>
+            <h2 className='font-semibold text-3xl text-center lg:py-20 font-serif'><span className='text-5xl'>S</span>ignUp Please</h2>
 
-            <div className='flex justify-evenly'>
+            <div className='grid lg:flex lg:justify-evenly md:flex md:justify-evenly'>
 
                 <div>
 
