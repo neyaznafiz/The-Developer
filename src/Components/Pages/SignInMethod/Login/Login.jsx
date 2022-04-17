@@ -27,7 +27,7 @@ const Login = () => {
 
   let errorElement
   if (error) {
-    errorElement = <div className='border border-danger pt-3 mb-3 col-5 mx-auto text-bold fw-bold' style={{ fontFamily: 'monospace' }}>
+    errorElement = <div className='border border-red-500 text-red-500 font-mono'>
       <p className='text-danger text-center'>Error: {error?.message}</p>
     </div>
 
