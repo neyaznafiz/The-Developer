@@ -1,0 +1,6 @@
+.coustom-shadow{
+    border-radius: 34px;
+background: #c45f5f;
+box-shadow: inset 16px 16px 22px #ab5353,
+            inset -16px -16px 22px #dd6b6b;
+}

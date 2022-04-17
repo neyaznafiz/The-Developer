@@ -1,4 +1,4 @@
-import './SignUp.css'
+import '../Style/Style.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
@@ -67,15 +67,15 @@ const SignUp = () => {
 
                 <div>
 
-                    <form onSubmit={handleSignUp} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 sdw'>
+                    <form onSubmit={handleSignUp} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 coustom-shadow'>
 
-                        <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
+                        <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
-                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
+                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
-                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md sdw outline-none text-white' />
+                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
-                        <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md sdw out outline-none text-white' />
+                        <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md coustom-shadow out outline-none text-white' />
 
                         {errorElement}
 
