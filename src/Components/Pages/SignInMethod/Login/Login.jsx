@@ -1,15 +1,17 @@
 import React, { useRef } from 'react';
 import '../../../Style/Style.css'
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from '../../../Shared/Loading/Loading';
 
 const Login = () => {
 
   const emailRef = useRef()
   const passwordRef = useRef()
+  const navigate = useNavigate()
 
   const [
     signInWithEmailAndPassword,
@@ -20,6 +22,18 @@ const Login = () => {
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth)
 
+  const location = useLocation()
+  let from = location.state?.from?.pathname || "/";
+
+if(loading || sending){
+  return <Loading></Loading>
+}
+
+if(user){
+  navigate(from, { replace: true });
+}
+
+
   const handleLogIn = event => {
     event.preventDefault()
 
@@ -28,9 +42,8 @@ const Login = () => {
 
     signInWithEmailAndPassword(email, password)
 
-
   }
-
+  
   const handleResetPassword = async event => {
     event.preventDefault()
     const email = emailRef.current.value
@@ -44,7 +57,7 @@ const Login = () => {
   }
 
   return (
-    <div className=' bg-slate-300'>
+    <div className='pt-20 pb-36 bg-slate-300'>
 
 
       <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>L</span>ogIn Please</h2>
@@ -66,13 +79,15 @@ const Login = () => {
             <input onClick={handleResetPassword} type="submit" value='Forget Password ?' className='text-lg font-semibold opacity-80 hover:opacity-100  text-white mb-' />
 
 
+
           </form>
 
           <div className='pt-2 font-medium text-center'>
             Are you new here ? <Link to='/signup' className='hover:border-b-4 border-black px-1' >Sign Up </Link>
           </div>
+            <ToastContainer className=''/>
         </div>
-        <ToastContainer />
+        
 
         <div className=''>
           <SocialSignUp></SocialSignUp>

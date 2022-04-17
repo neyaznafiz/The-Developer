@@ -6,6 +6,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
 import { ToastContainer, toast } from 'react-toastify';
 import { useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
+import Loading from '../../../Shared/Loading/Loading';
 
 const SocialSignUp = () => {
 
@@ -15,6 +16,7 @@ const SocialSignUp = () => {
 
     const [signInWithTwitter, userFaceTwitter, loadingTwitter, errorTwitter] = useSignInWithTwitter(auth);
 
+    
 
     if (errorGoogel || errorFacebook || errorTwitter) {
         return (
@@ -27,7 +29,7 @@ const SocialSignUp = () => {
 
 
 if (loadingGoogle || loadingFacebook || loadingTwitter) {
-  return <p>Loading...</p>
+  return <Loading className='pt-20'></Loading>
 }
 
     return (

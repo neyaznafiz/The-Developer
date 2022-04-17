@@ -1,11 +1,12 @@
 import React from 'react';
+import loading from '../../../Images/loading.gif'
 
 const Loading = () => {
     return (
         <div>
-            <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+            <img src={loading} alt="" />
     
-  </svg>
+  
         </div>
     );
 };

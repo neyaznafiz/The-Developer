@@ -59,7 +59,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='pt-24 pb-40 bg-slate-300'>
+        <div className='pt-20 pb-36 bg-slate-300'>
 
           
             <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>S</span>ignUp Please</h2>
