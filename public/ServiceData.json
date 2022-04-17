@@ -1,0 +1,19 @@
+[
+    {
+        "id": 101,
+        "service": "Web Design",
+        "img": "",
+        "info": "I provide responsive Web-Design."
+    },
+    {
+        "id": 102,
+        "service": "Web Development",
+        "img": "",
+        "info": "I provide Web-Development."
+    },
+    {
+        "id": 103,
+        "service": "Authentication",
+        "info": "We provide Web-Authentication."
+    }
+]
