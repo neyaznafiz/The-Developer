@@ -19,28 +19,30 @@ const Header = () => {
         signOut(auth)
     }
 
+    
+
     return (
         <nav className='px-28 border-b border-slate-200'>
 
             <div className='grid justify-center  lg:flex lg:justify-between'>
 
-                <div className='pt-5 pl-8 lg:pl-0'>
+                <div className='pt-5 mx-auto lg:mx-0 md:mx-0 lg:pl-0'>
                     <Link to='/' className=' lg:border-b-4 md:border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter text-slate-500'>T</span>HE DEVELOPER</Link>
                 </div>
 
-                <div className='flex gap-11'>
+                <div className='flex gap-11 lg:py-7 md:py-5 py-3'>
     
-                    <CoustomLink to='/services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></CoustomLink>
+                    <Link to='/services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></Link>
 
-                    <CoustomLink to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </CoustomLink>
+                    <Link to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </Link>
                     
-                    <CoustomLink to='/blogs' className='px-2 py-1'> <BsFillJournalBookmarkFill className='text-2xl'></BsFillJournalBookmarkFill> </CoustomLink>
+                    <Link to='/blogs' className='px-2 py-1'> <BsFillJournalBookmarkFill className='text-2xl'></BsFillJournalBookmarkFill> </Link>
 
                     {
                         !user ?
-                        <CoustomLink to='/login' className='px-2 py-1'> <FiLogIn className='text-2xl '></FiLogIn> </CoustomLink>
+                        <Link to='/login' className='px-2 py-1'> <FiLogIn className='text-2xl '></FiLogIn> </Link>
                         :
-                        <CoustomLink to='/' className='px-2 py-1' onClick={handleSignOut}> <FiLogOut className='text-2xl' ></FiLogOut> </CoustomLink>
+                        <Link to='/' className='px-2 py-1' onClick={handleSignOut}> <FiLogOut className='text-2xl' ></FiLogOut> </Link>
                     }
 
                 </div>

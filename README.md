@@ -7,6 +7,7 @@
 - In blog page here some information about Authenticatin and Firebase.
 - In about page there is some information about this developer.
 - You can get web services from here. If you need anythying you can contact the developer.
+- Here is no hamburger menu, that's why the navbar is little bit wired. It will be added soon.
 
 ## Technology used in this website.
 - React
