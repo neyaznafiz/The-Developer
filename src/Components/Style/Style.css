@@ -15,3 +15,10 @@ box-shadow:  26px 26px 51px #2f3043,
              -26px -26px 51px #434661;
 
 }
+
+.my-img-shadow{
+    border-radius: 50%;
+background: linear-gradient(145deg, #9b9db8, #83849b);
+box-shadow:  26px 26px 51px #77798d,
+             -26px -26px 51px #abadcb;
+}
