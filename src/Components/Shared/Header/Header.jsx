@@ -5,8 +5,8 @@ import CoustomLink from '../CoustomLink/CoustomLink';
 import {GrServicePlay} from 'react-icons/gr';
 import {FiShoppingBag} from 'react-icons/fi';
 import {BsFillJournalBookmarkFill} from 'react-icons/bs';
-import {RiLoginCircleLine} from 'react-icons/ri';
-import {BiLogOutCircle} from 'react-icons/bi';
+import {FiLogIn} from 'react-icons/fi';
+import {FiLogOut} from 'react-icons/fi';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 import { signOut } from 'firebase/auth';
@@ -36,9 +36,9 @@ const Header = () => {
 
                     {
                         !user ?
-                        <CoustomLink to='/login' className='px-2 py-1'> <RiLoginCircleLine className='text-2xl '></RiLoginCircleLine> </CoustomLink>
+                        <CoustomLink to='/login' className='px-2 py-1'> <FiLogIn className='text-2xl '></FiLogIn> </CoustomLink>
                         :
-                        <CoustomLink to='/' className='px-2 py-1' onClick={handleSignOut}> <BiLogOutCircle className='text-2xl' ></BiLogOutCircle> </CoustomLink>
+                        <CoustomLink to='/' className='px-2 py-1' onClick={handleSignOut}> <FiLogOut className='text-2xl' ></FiLogOut> </CoustomLink>
                     }
 
                 </div>
