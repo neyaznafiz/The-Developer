@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import '../../../Style/Style.css'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -17,6 +18,8 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth)
+
   const handleLogIn = event => {
     event.preventDefault()
 
@@ -28,8 +31,20 @@ const Login = () => {
 
   }
 
+  const handleResetPassword = async event => {
+    event.preventDefault()
+    const email = emailRef.current.value
+   if(email){
+    await sendPasswordResetEmail(email)
+    toast('Email Sent')
+   }
+   else{
+     toast('Please set your email')
+   }
+  }
+
   return (
-    <div className='pt-24 pb-40 bg-slate-300'>
+    <div className=' bg-slate-300'>
 
 
       <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>L</span>ogIn Please</h2>
@@ -41,13 +56,15 @@ const Login = () => {
           <form onSubmit={handleLogIn} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 coustom-shadow'>
 
 
-            
-              <input ref={emailRef} type="email" name="email" placeholder='Email' id="email" required className='border px-2 rounded-md coustom-shadow outline-none text-white mt-14' />
 
-              <input ref={passwordRef} type="password" name="password" placeholder='Password' id="password" required className='border px-2 rounded-md coustom-shadow outline-none text-white' />
+            <input ref={emailRef} type="email" name="email" placeholder='Email' id="email" required className='border px-2 rounded-md coustom-shadow outline-none text-white mt-14' />
 
-              <input type="submit" value='Log In' className='text-lg font-semibold opacity-80 text-white mb-8' />
-            
+            <input ref={passwordRef} type="password" name="password" placeholder='Password' id="password" className='border px-2 rounded-md coustom-shadow outline-none text-white' />
+
+            <input type="submit" value='Log In' className='text-lg font-semibold opacity-80 hover:opacity-100 text-white mb-' />
+
+            <input onClick={handleResetPassword} type="submit" value='Forget Password ?' className='text-lg font-semibold opacity-80 hover:opacity-100  text-white mb-' />
+
 
           </form>
 
@@ -55,6 +72,7 @@ const Login = () => {
             Are you new here ? <Link to='/signup' className='hover:border-b-4 border-black px-1' >Sign Up </Link>
           </div>
         </div>
+        <ToastContainer />
 
         <div className=''>
           <SocialSignUp></SocialSignUp>
@@ -62,6 +80,7 @@ const Login = () => {
 
       </div>
 
+      
 
     </div>
   );

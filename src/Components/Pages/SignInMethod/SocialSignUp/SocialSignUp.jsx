@@ -4,6 +4,7 @@ import auth from '../../../../Firebase/firebase.init'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
+import { ToastContainer, toast } from 'react-toastify';
 import { useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 
 const SocialSignUp = () => {
@@ -33,16 +34,18 @@ if (loadingGoogle || loadingFacebook || loadingTwitter) {
         <div className='coustom-shadow py-14 px-4 grid h-72 w-72'>
 
             <div>
-                <button onClick={() => signInWithGoogle()} className=' rounded-full flex pl-6 pr-5 py-2 text-white coustom-shadow'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
+                <button onClick={() => signInWithGoogle()} className=' rounded-full flex pl-6 pr-5 py-2 text-white coustom-shadow opacity-80 hover:opacity-100'> <AiFillGoogleCircle className='mt-1 mr-2'></AiFillGoogleCircle> Continue witth google</button>
             </div>
 
             <div className='my-3'>
-                <button onClick={() => signInWithTwitter()} className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white coustom-shadow'> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
+                <button onClick={() => signInWithTwitter()} className=' rounded-full flex pl-6 pr-5 pr-9 py-2 text-white coustom-shadow opacity-80 hover:opacity-100 '> <AiFillTwitterCircle className='mt-1 mr-2'></AiFillTwitterCircle> Continue witth Twitter</button>
             </div>
 
             <div>
-                <button onClick={() => signInWithFacebook()} className=' rounded-full flex pl-6 pr-7 py-2 text-white coustom-shadow'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
+                <button onClick={() => signInWithFacebook()} className=' rounded-full flex pl-6 pr-7 py-2 text-white coustom-shadow opacity-80 hover:opacity-100'> <BsFacebook className='mt-1 mr-2'></BsFacebook> Continue witth Facebook</button>
             </div>
+
+            
 
         </div>
     );

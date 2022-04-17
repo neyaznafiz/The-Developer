@@ -80,7 +80,7 @@ const SignUp = () => {
 
                         {errorElement}
 
-                        <input type="submit" value='Sign Up' className='text-lg font-semibold opacity-80 text-white' />
+                        <input type="submit" value='Sign Up' className='text-lg font-semibold opacity-80 hover:opacity-100  text-white' />
 
                     </form>
 
