@@ -25,7 +25,7 @@ const Header = () => {
             <div className='flex justify-between'>
 
                 <div className='pt-5'>
-                    <Link to='/' className=' border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter'>T</span>HE DEVELOPER</Link>
+                    <Link to='/' className=' border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter text-slate-500'>T</span>HE DEVELOPER</Link>
                 </div>
 
                 <div className='flex gap-11'>
@@ -44,7 +44,7 @@ const Header = () => {
                 </div>
 
                     <div className='pt-7'>
-                    <Link to='/about' className='px-2 py- border-b-4 rounded-b-lg border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter'>T</span></Link>
+                    <Link to='/about' className='px-2 py- border-b-4 rounded-b-lg border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter text-slate-500'>T</span></Link>
                     </div>
                     
             </div>
