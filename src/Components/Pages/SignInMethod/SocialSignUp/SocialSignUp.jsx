@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Style/Style.css'
+import '../../../Style/Style.css'
 import auth from '../../../../Firebase/firebase.init'
 import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import '../Style/Style.css'
+import '../../../Style/Style.css'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
@@ -31,7 +31,8 @@ const Login = () => {
   return (
     <div className='pt-24 pb-40 bg-slate-300'>
 
-      <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>T</span>he Developer</h2>
+
+      <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>L</span>ogIn Please</h2>
 
       <div className='flex justify-evenly'>
 

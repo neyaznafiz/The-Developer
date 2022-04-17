@@ -1,4 +1,4 @@
-import '../Style/Style.css'
+import '../../../Style/Style.css'
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
@@ -61,7 +61,8 @@ const SignUp = () => {
     return (
         <div className='pt-24 pb-40 bg-slate-300'>
 
-            <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>T</span>he Developer</h2>
+          
+            <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>S</span>ignUp Please</h2>
 
             <div className='flex justify-evenly'>
 

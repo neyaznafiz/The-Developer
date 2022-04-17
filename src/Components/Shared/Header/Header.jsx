@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../Style/Style.css'
 import CoustomLink from '../CoustomLink/CoustomLink';
 import {GrServicePlay} from 'react-icons/gr';
 import {FiShoppingBag} from 'react-icons/fi';
@@ -19,12 +20,12 @@ const Header = () => {
     }
 
     return (
-        <nav className=' px-28 '>
+        <nav className=' px-28'>
 
             <div className='flex justify-between'>
 
                 <div className='pt-5'>
-                    <Link to='/' className=' border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif'><span className='text-3xl font tracking-tighter'>T</span>HE DEVELOPER</Link>
+                    <Link to='/' className=' border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter'>T</span>HE DEVELOPER</Link>
                 </div>
 
                 <div className='flex gap-11'>
