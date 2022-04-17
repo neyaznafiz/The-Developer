@@ -20,7 +20,7 @@ const Header = () => {
     }
 
     return (
-        <nav className=' px-28'>
+        <nav className='px-28 border-b border-slate-200'>
 
             <div className='grid justify-center  lg:flex lg:justify-between'>
 
