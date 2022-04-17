@@ -30,7 +30,7 @@ const Header = () => {
 
                 <div className='flex gap-11'>
     
-                    <CoustomLink to='/service' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></CoustomLink>
+                    <CoustomLink to='/services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></CoustomLink>
 
                     <CoustomLink to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </CoustomLink>
                     

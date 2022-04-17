@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect } from "react"
+import { useState } from "react"
 
 const useServicesHook = () => {
 
@@ -7,13 +7,13 @@ const useServicesHook = () => {
 
     useEffect(() => {
 
-        fetch(`https://raw.githubusercontent.com/neyaznafiz/API-developer-data/main/theDeveloprData.json`)
-        .then(res => res.json())
-        .then(data => console.log(data))
+        fetch(`ServiceData.json`)
+            .then(res => res.json())
+            .then(data => setServices(data))
 
-    }, [])
+    }, []);
 
     return [services, setServices]
-};
+}
 
-export default useServicesHook
+export default useServicesHook;

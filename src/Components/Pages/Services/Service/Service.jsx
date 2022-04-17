@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import useServicesHook from '../../../Shared/useServicesHook/useServicesHook';
-import Services from '../Services/Services';
+import React from 'react';
 
-const Service = () => {
+const Service = ({ service }) => {
 
+    const { name, price, img, info } = service
 
-    const [services, setServices] = useState([])
-
-    useEffect(() => {
-        fetch('https://raw.githubusercontent.com/neyaznafiz/API-developer-data/main/theDeveloprData.json')
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
-
+    console.log(service);
 
     return (
         <div>
-            {
-                services.map(service => <Services
+            <p>{name}</p>
 
-                    key={service.id}
-                    service={service}
-
-                ></Services>)
-            }
         </div>
     );
 };
