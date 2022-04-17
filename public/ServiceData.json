@@ -4,20 +4,20 @@
         "name": "Web Design",
         "price": 150,
         "img": "https://cdn.searchenginejournal.com/wp-content/uploads/2020/01/which-web-design-platform-is-right-for-you-5e4d59fb941b9-1520x800.png",
-        "info": "I provide responsive Web-Design."
+        "info": "I provide responsive Web-Design. I use Bootstrap, Tailwind and Vanilla CSS."
     },
     {
         "id": 102,
         "name": "Web Development",
         "price": 205,
         "img": "https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg",
-        "info": "I provide Web-Development."
+        "info": "I provide Web-Development. I use React and JavaScript."
     },
     {
         "id": 103,
         "name": "Authentication",
         "price": 199,
         "img": "https://www.loginradius.com/blog/static/2777d4b53aa6128513f070b7f78f3651/03979/server-proc-150x150.png",
-        "info": "We provide Web-Authentication."
+        "info": "I provide Web-Authentication. Here is I provide secure authentication. any type of authentication you need."
     }
 ]
