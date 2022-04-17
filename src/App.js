@@ -3,17 +3,19 @@
 import Header from './Components/Shared/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Components/Pages/Home/Home/Home';
-import Services from './Components/Pages/Services/Services';
+import Services from './Components/Pages/Services/Services/Services';
 import CheckOut from './Components/Pages/CheckOut/CheckOut';
 import Blogs from './Components/Bolgs/Blogs';
 import About from './Components/Pages/About/About';
 import SignUp from './Components/Pages/SignInMethod/SignUp/SignUp';
 import Login from './Components/Pages/SignInMethod/Login/Login';
 import RequireAuth from './Components/Pages/RequireAuth/RequireAuth';
+import Footer from './Components/Shared/Footer/Footer';
+import NotFundError from './Components/Shared/NotFuntError/NotFundError';
 
 function App() {
   return (
-    <div>
+    <div >
       <Header></Header>
 
       <Routes>
@@ -29,8 +31,12 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<NotFundError></NotFundError>}></Route>
 
       </Routes>
+
+      <Footer></Footer>
+
     </div>
   );
 }

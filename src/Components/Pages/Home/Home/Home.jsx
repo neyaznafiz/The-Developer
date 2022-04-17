@@ -1,4 +1,5 @@
 import React from 'react';
+import Services from '../../Services/Services/Services';
 import Head from '../Head/Head';
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
         <div>
             <Head></Head>
 
-            home
+           <Services></Services>
         </div>
     );
 };
