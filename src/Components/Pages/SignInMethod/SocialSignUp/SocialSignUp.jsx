@@ -32,9 +32,9 @@ const SocialSignUp = () => {
         return <Loading className=''></Loading>
     }
 
-const handleRefresh = () =>{
-    window.location.reload(false);
-}
+    const handleRefresh = () => {
+        window.location.reload(false);
+    }
 
     return (
         <div>
@@ -55,11 +55,16 @@ const handleRefresh = () =>{
 
             </div>
 
-        <div className=''>
-            {errorElement}
-            
-            <button onClick={handleRefresh} >Clear</button>
+            <div className='pt-4'>
+                {errorElement}
             </div>
+
+            {
+                errorElement ? 
+                <button onClick={handleRefresh} className='coustom-shadow px-3 py-2 text-white font-semibold'>Clear</button>
+                :
+                ''
+            }
         </div>
     );
 };
