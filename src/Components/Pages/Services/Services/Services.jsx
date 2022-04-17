@@ -12,14 +12,17 @@ const Services = () => {
     return (
         <div id='service'>
 
-    <p>{services.length}</p>
+<h2 className='text-center lg:pt-20 md:pt-10 pt-5 lg:text-4xl md:text-xl text-lg font-bold border-b-2 lg:mx-80 md:mx-72 mx-10'>MY SERVICES</h2>
 
-    {
+  <div className='grid px-10 lg:px-0 md:px-0 lg:flex gap-4 justify-center lg:py-20 md:py-10 py-5'>
+      
+  {
         services.map(service => <Service
         key={service.id}
         service={service}
-        ></Service>)
+        className="" ></Service>)
     }
+  </div>
 
         </div>
     );

@@ -2,9 +2,13 @@ import React from 'react';
 
 const NotFundError = () => {
     return (
-        <div>
-            <p>404</p>
+        <div className='py-44 text-center'>
+
+            <div>
+            <p className='lg:text-4xl'>404</p>
             <p>your page is not fund</p>
+            </div>
+
         </div>
     );
 };
