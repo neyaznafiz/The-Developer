@@ -5,9 +5,9 @@ import { AiFillGoogleCircle } from 'react-icons/ai'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import Loading from '../../../Shared/Loading/Loading';
-import { Link } from 'react-router-dom';
 
 const SocialSignUp = () => {
 
@@ -17,13 +17,11 @@ const SocialSignUp = () => {
 
     const [signInWithTwitter, userFaceTwitter, loadingTwitter, errorTwitter] = useSignInWithTwitter(auth);
 
+    
 
-    let errorElement
+
     if (errorGoogel || errorFacebook || errorTwitter) {
-        errorElement = <div>
-            <p className='border border-red-500 text-red-500 py-3 px-2 mb-4 font-mono'>Error: {errorGoogel?.message} {errorFacebook?.message} {errorTwitter?.message}</p>
-        </div>
-
+        toast.error(<>{errorGoogel?.message}, {errorFacebook?.message}, {errorTwitter?.message}</>)
     }
 
 
@@ -32,8 +30,8 @@ const SocialSignUp = () => {
         return <Loading className=''></Loading>
     }
 
-    const handleRefresh = () => {
-        window.location.reload(false);
+    if(userGoogle || userFacebook || userFaceTwitter){
+        toast.success(<p>You are successfully LogedIn</p>)
     }
 
     return (
@@ -55,16 +53,8 @@ const SocialSignUp = () => {
 
             </div>
 
-            <div className='pt-4'>
-                {errorElement}
-            </div>
 
-            {
-                errorElement ? 
-                <button onClick={handleRefresh} className='coustom-shadow px-3 py-2 text-white font-semibold'>Clear</button>
-                :
-                ''
-            }
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

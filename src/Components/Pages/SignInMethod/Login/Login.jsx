@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../../Firebase/firebase.init';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../../Shared/Loading/Loading';
 
 const Login = () => {
@@ -25,16 +26,15 @@ const Login = () => {
   const location = useLocation()
   let from = location.state?.from?.pathname || "/";
 
-  let errorElement
-  if (error) {
-    errorElement = <div className='border border-red-500 text-red-500 font-mono'>
-      <p className='text-danger text-center'>Error: {error?.message}</p>
-    </div>
 
+  if (error) {
+    toast.error('{error?.message}')
   }
 
   if (loading || sending) {
-    return <Loading></Loading>
+    return <div className='mx40 my-32'>
+      <Loading></Loading>
+    </div>
   }
 
   if (user) {
@@ -57,10 +57,10 @@ const Login = () => {
     const email = emailRef.current.value
     if (email) {
       await sendPasswordResetEmail(email)
-      toast('Email Sent')
+      toast.success('Email Sent')
     }
     else {
-      toast('Please set your email')
+      toast.error('Please set your email')
     }
   }
 
@@ -88,9 +88,6 @@ const Login = () => {
             Are you new here ? <Link to='/signup' className='hover:border-b-4 border-black px-1' >Sign Up </Link>
           </div>
 
-          {errorElement}
-
-          <ToastContainer />
         </div>
 
 
@@ -98,6 +95,7 @@ const Login = () => {
           <SocialSignUp></SocialSignUp>
         </div>
 
+        <ToastContainer />
       </div>
 
 

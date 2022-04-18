@@ -19,7 +19,8 @@ const Header = () => {
         signOut(auth)
     }
 
-    
+    // lg:border-b-4 md:border-b-4
+    // lg:border-b-4 md:border-b-4 rounded-b-lg 
 
     return (
         <nav className='px-28 border-b border-slate-200'>
@@ -27,12 +28,12 @@ const Header = () => {
             <div className='grid justify-center  lg:flex lg:justify-between'>
 
                 <div className='pt-5 mx-auto lg:mx-0 md:mx-0 lg:pl-0'>
-                    <Link to='/' className=' lg:border-b-4 md:border-b-4 rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter text-slate-500'>T</span>HE DEVELOPER</Link>
+                    <Link to='/' className='  rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter text-slate-500'>T</span>HE DEVELOPER</Link>
                 </div>
 
                 <div className='flex gap-11 lg:py-7 md:py-5 py-3'>
     
-                    <a href='#services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
+                    <a href='home/services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
 
                     <Link to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </Link>
                     
@@ -48,7 +49,7 @@ const Header = () => {
                 </div>
 
                     <div className='lg:pt-6 mb-6 lg:pb-0 text-center'>
-                    <Link to='/about' className='px-2 pb-1 lg:border-b-4 md:border-b-4 rounded-b-lg border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter text-slate-500'>T</span></Link>
+                    <Link to='/about' className='px-2 pb-1 border-gray-500 font-semibold font-serif'>ABOU <span className='text-3xl tracking-tighter text-slate-500'>T</span></Link>
                     </div>
                     
             </div>

@@ -5,6 +5,7 @@ import auth from '../../../../Firebase/firebase.init';
 import Loading from '../../../Shared/Loading/Loading';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
 
@@ -26,16 +27,16 @@ const SignUp = () => {
         navigate('/login')
     }
 
-    let errorElement
-    if (errorForUpdateProfile) {
-        errorElement = <div className='border border-red-500 text-red-500 py-2 px-2 font-mono'>
-            <p className='text-red-500 text-center'>Error: {error?.message}</p>
-        </div>
+
+    if (errorForUpdateProfile || error) {
+        toast.error(<>{errorForUpdateProfile.message}, {error?.message}</>)
     }
 
 
     if (loading || updating) {
-        return <Loading></Loading>
+        return <div className='mx-40 my-32'>
+            <Loading></Loading>
+        </div>
     }
 
     if (user) {
@@ -52,8 +53,8 @@ const SignUp = () => {
 
 
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName: name });
-        toast('Updated profile');
+        await updateProfile();
+        alert('Profile Updated');
         navigate('/')
 
     }
@@ -79,8 +80,6 @@ const SignUp = () => {
 
                         <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md coustom-shadow out outline-none text-white' />
 
-                        {errorElement}
-
                         <input type="submit" value='Sign Up' className='text-lg font-semibold opacity-80 hover:opacity-100  text-white' />
 
                     </form>
@@ -90,14 +89,11 @@ const SignUp = () => {
                     </div>
                 </div>
 
-                {errorElement}
-
                 <div className=''>
                     <SocialSignUp></SocialSignUp>
                 </div>
 
             </div>
-
 
             <ToastContainer></ToastContainer>
         </div>
