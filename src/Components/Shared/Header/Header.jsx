@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../Style/Style.css'
 import CoustomLink from '../CoustomLink/CoustomLink';
 import {GrServicePlay} from 'react-icons/gr';
@@ -22,6 +22,12 @@ const Header = () => {
     // lg:border-b-4 md:border-b-4
     // lg:border-b-4 md:border-b-4 rounded-b-lg 
 
+    const navigate = useNavigate()
+
+    const navigateToServices = ()=> {
+        navigate(`#services`)
+    }
+
     return (
         <nav className='px-28 border-b border-slate-200'>
 
@@ -33,7 +39,7 @@ const Header = () => {
 
                 <div className='flex gap-11 lg:py-7 md:py-5 py-3'>
     
-                    <a href='home/services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
+                    <button onClick={navigateToServices} className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></button>
 
                     <Link to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </Link>
                     

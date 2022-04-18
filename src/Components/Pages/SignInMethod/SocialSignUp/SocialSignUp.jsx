@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSignInWithFacebook, useSignInWithGoogle, useSignInWithTwitter } from 'react-firebase-hooks/auth';
 import Loading from '../../../Shared/Loading/Loading';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialSignUp = () => {
 
@@ -17,7 +18,10 @@ const SocialSignUp = () => {
 
     const [signInWithTwitter, userFaceTwitter, loadingTwitter, errorTwitter] = useSignInWithTwitter(auth);
 
-    
+    const navigate = useNavigate()
+
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
 
     if (errorGoogel || errorFacebook || errorTwitter) {
@@ -30,8 +34,11 @@ const SocialSignUp = () => {
         return <Loading className=''></Loading>
     }
 
-    if(userGoogle || userFacebook || userFaceTwitter){
+    if (userGoogle || userFacebook || userFaceTwitter) {
         toast.success(<p>You are successfully LogedIn</p>)
+
+        navigate(from, { replace: true });
+
     }
 
     return (

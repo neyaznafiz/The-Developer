@@ -51,8 +51,13 @@ const SignUp = () => {
         const email = event.target.email.value
         const password = event.target.password.value
 
+        if (password < 6) {
+            await createUserWithEmailAndPassword(email, password)
+        }
+        else{
+            toast.error('Please set a password more than ')
+        }
 
-        await createUserWithEmailAndPassword(email, password)
         await updateProfile();
         alert('Profile Updated');
         navigate('/')

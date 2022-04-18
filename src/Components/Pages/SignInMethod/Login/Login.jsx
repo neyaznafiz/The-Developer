@@ -67,14 +67,16 @@ const Login = () => {
   return (
     <div className='pt-20 pb-36 bg-slate-300'>
 
+<ToastContainer />
 
       <h2 className='font-semibold text-3xl text-center py-20 font-serif'><span className='text-5xl'>L</span>ogIn Please</h2>
 
-      <div className='flex justify-evenly'>
+      <div className='grid lg:flex lg:justify-evenly md:flex md:justify-evenly'>
 
         <div>
 
           <form onSubmit={handleLogIn} className='grid gap-3 px-3 pt-8 pb-2 h-72 w-72 coustom-shadow'>
+            
             <input ref={emailRef} type="email" name="email" placeholder='Email' id="email" required className='border px-2 rounded-md coustom-shadow outline-none text-white mt-14' />
 
             <input ref={passwordRef} type="password" name="password" placeholder='Password' id="password" className='border px-2 rounded-md coustom-shadow outline-none text-white' />
@@ -90,12 +92,11 @@ const Login = () => {
 
         </div>
 
-
         <div className=''>
           <SocialSignUp></SocialSignUp>
         </div>
 
-        <ToastContainer />
+       
       </div>
 
 

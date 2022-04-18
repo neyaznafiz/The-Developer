@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='border'>
-            <p className='py-8 text-center font-semibold'>Copyright © {(new Date().getFullYear())} The Developer</p>
+        <div className='bg-slate-300'>
+            <p className='py-7 text-center font-semibold'>Copyright © {(new Date().getFullYear())} The Developer</p>
         </div>
     );
 }; 
