@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <nav className='px-28 border-b border-slate-200  bg-white'>
 
-            <div c justify-center  lg:flex lg:justify-between'>
+            <div className='grid justify-center  lg:flex lg:justify-between'>
 
                 <div className='pt-5 mx-auto lg:mx-0 lg:pl-0'>
                     <Link to='/' className='rounded-b-lg border-gray-500 px-2 py-2 font-semibold font-serif '><span className='text-3xl font tracking-tighter text-slate-500'>T</span>HE DEVELOPER</Link>

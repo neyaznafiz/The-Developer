@@ -9,6 +9,10 @@
 - You can get web services from here. If you need anythying you can contact the developer.
 - Here is no hamburger menu, that's why the navbar is little bit wired. It will be added soon.
 
+
+# Features of this website
+- In the navbar, the website logo is used for Home Route. In the service section, you found some services provide by the programer. You can book any services for you from here. You can find some information in the About section about the programmer who belongs to the authority of this website.
+
 ## Technology used in this website.
 - React
 - Firebase
