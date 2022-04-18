@@ -39,10 +39,7 @@ const SignUp = () => {
         </div>
     }
 
-    if (user) {
-        //     navigate('/home')
-        console.log('user', user);
-    }
+   
 
 
     const handleSignUp = async event => {

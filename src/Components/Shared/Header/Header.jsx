@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, NavLink } from 'react-router-dom';
 import '../../Style/Style.css'
 import {GrServicePlay} from 'react-icons/gr';
 import {FiShoppingBag} from 'react-icons/fi';
@@ -23,7 +23,7 @@ const Header = () => {
     
 
     return (
-        <nav className='px-28 border-b border-slate-200 sticky top-0 bg-white'>
+        <nav className='px-28 border-b border-slate-200  bg-white'>
 
             <div className='grid justify-center  lg:flex lg:justify-between'>
 
@@ -33,7 +33,7 @@ const Header = () => {
 
                 <div className='flex gap-11 lg:py-7 md:py-5 py-3'>
     
-                    <Link to='/home#service' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></Link>
+                    <a href='/home#services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
 
                     <Link to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </Link>
                     

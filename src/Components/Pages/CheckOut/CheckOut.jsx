@@ -31,7 +31,7 @@ const CheckOut = () => {
               <div>
               <p className='text-white py-3 text-xl'>After select a service, your ' Checkout button ' will be enable.</p>
               <div className='flex justify-center'>
-              <Link to='/home/services' className='coustom-shadow px-3 py-1 text-white font-semibold'>Go to Service</Link>
+              <Link to='/home#services' className='coustom-shadow px-3 py-1 text-white font-semibold'>Go to Service</Link>
               </div>
               </div>
           }    
