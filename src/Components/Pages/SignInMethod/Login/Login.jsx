@@ -28,7 +28,7 @@ const Login = () => {
 
 
   if (error) {
-    toast.error('{error?.message}')
+    toast.error('Please set a valid email and password')
   }
 
   if (loading || sending) {
