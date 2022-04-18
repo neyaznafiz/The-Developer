@@ -9,7 +9,7 @@ const Blogs = () => {
             </div>
 
 
-            <div className='grid gap-5 mb-44'>
+            <div className='grid gap-5 pb-20'>
                 <div>
                     <h2 className='text-xl bg-slate-300 py-2 text-center font-serif'>Why are you using firebase? What other options do you have to implement authentication?</h2>
 

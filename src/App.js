@@ -15,36 +15,39 @@ import NotFundError from './Components/Shared/NotFuntError/NotFundError';
 
 function App() {
   return (
-    <div >
-      <Header></Header>
+    <div className='relative h-screen' >
 
-      <Routes>
+      <div className='pb-10'>
+        <Header></Header>
 
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/home' element={<Home></Home>}>
+        <Routes>
 
-         <Route path='/home/#services' element={<Services></Services>}></Route>
-        </Route>
-       
-        <Route path='checkout' element={
-          <RequireAuth>
-            <CheckOut></CheckOut>
-          </RequireAuth>
-        }></Route>
-        <Route path='/checkout/:Id' element={
-          <RequireAuth>
-            <CheckOut></CheckOut>
-          </RequireAuth>
-        }></Route>
-        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='*' element={<NotFundError></NotFundError>}></Route>
+          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/home' element={<Home></Home>}>
 
-      </Routes>
+            <Route path='/home/#services' element={<Services></Services>}></Route>
+          </Route>
 
-      <Footer></Footer>
+          <Route path='checkout' element={
+            <RequireAuth>
+              <CheckOut></CheckOut>
+            </RequireAuth>
+          }></Route>
+          <Route path='/checkout/:Id' element={
+            <RequireAuth>
+              <CheckOut></CheckOut>
+            </RequireAuth>
+          }></Route>
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+          <Route path='/about' element={<About></About>}></Route>
+          <Route path='/signup' element={<SignUp></SignUp>}></Route>
+          <Route path='/login' element={<Login></Login>}></Route>
+          <Route path='*' element={<NotFundError></NotFundError>}></Route>
+
+        </Routes>
+      </div>
+
+      <Footer className='absolute'></Footer>
 
     </div>
   );
