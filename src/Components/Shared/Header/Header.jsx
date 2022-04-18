@@ -33,7 +33,7 @@ const Header = () => {
 
                 <div className='flex gap-11 lg:py-7 md:py-5 py-3'>
     
-                    <a href='/home#services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
+                    <a  href='/home#services' className='px-2 py-1'><GrServicePlay className='text-2xl'></GrServicePlay></a>
 
                     <Link to='/checkout' className='px-2 py-1'> <FiShoppingBag className='text-2xl'></FiShoppingBag> </Link>
                     
