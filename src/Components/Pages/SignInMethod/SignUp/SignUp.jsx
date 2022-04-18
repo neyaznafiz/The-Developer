@@ -10,8 +10,8 @@ import { useState } from 'react';
 
 const SignUp = () => {
 
-    const [email, setEmail]=useState('')
-    const [password, setPassword]=useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
 
     const [
@@ -44,6 +44,7 @@ const SignUp = () => {
     }
 
     const handleEmail = event => {
+
         const emailRegx = /\S+@\S+\.\S+/
         const validEmail = emailRegx.test(event.target.value)
 
@@ -51,8 +52,22 @@ const SignUp = () => {
             setEmail(event.target.value)
         }
         else {
-            toast.error('Invalid Email')
+            toast.error('Please set a valid Email')
         }
+    }
+
+    const handlePassword = event => {
+
+        const passRegx = /.{6,}/
+        const validPass = passRegx.test(event.target.value)
+
+        if (validPass) {
+            setPassword(event.target.value)
+        }
+        else{
+            toast.error('Please set atlest 6 character in your password ')
+        }
+
     }
 
 
@@ -60,7 +75,7 @@ const SignUp = () => {
 
     const handleSignUp = async event => {
         event.preventDefault()
-       
+
 
         await createUserWithEmailAndPassword(email, password)
 
@@ -87,7 +102,7 @@ const SignUp = () => {
 
                         <input onBlur={handleEmail} type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
-                        <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
+                        <input onBlur={handlePassword} type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
                         <input type="password" name="confirm-password" placeholder='Confirm Password' id="" required className='border py-1 px-2 rounded-md coustom-shadow out outline-none text-white' />
 
