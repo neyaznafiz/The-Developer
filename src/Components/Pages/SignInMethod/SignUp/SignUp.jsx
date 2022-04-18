@@ -6,8 +6,12 @@ import Loading from '../../../Shared/Loading/Loading';
 import SocialSignUp from '../SocialSignUp/SocialSignUp';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 
 const SignUp = () => {
+
+    const [email, setEmail]=useState('')
+    const [password, setPassword]=useState('')
 
 
     const [
@@ -39,21 +43,26 @@ const SignUp = () => {
         </div>
     }
 
-   
+    const handleEmail = event => {
+        const emailRegx = /\S+@\S+\.\S+/
+        const validEmail = emailRegx.test(event.target.value)
+
+        if (validEmail) {
+            setEmail(event.target.value)
+        }
+        else {
+            toast.error('Invalid Email')
+        }
+    }
+
+
 
 
     const handleSignUp = async event => {
         event.preventDefault()
-        const name = event.target.name.value
-        const email = event.target.email.value
-        const password = event.target.password.value
+       
 
-        if (password < 6) {
-            await createUserWithEmailAndPassword(email, password)
-        }
-        else{
-            toast.error('Please set a password more than ')
-        }
+        await createUserWithEmailAndPassword(email, password)
 
         await updateProfile();
         alert('Profile Updated');
@@ -76,7 +85,7 @@ const SignUp = () => {
 
                         <input type="text" name='name' placeholder='Name' required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
-                        <input type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
+                        <input onBlur={handleEmail} type="email" name="email" placeholder='Email' id="email" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
                         <input type="password" name="password" placeholder='Password' id="password" required className='border py-1 px-2 rounded-md coustom-shadow outline-none text-white' />
 
