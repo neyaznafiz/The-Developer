@@ -4,7 +4,7 @@ const Head = () => {
     return (
         <div className='bg-slate-300'>
 
-            <div className='grid px-3 lg:flex justify-evenly items-center'>
+            <div className='grid grid-cols-1 lg:flex  justify-evenly items-center'>
                 <div className='item-none'>
                     <div className='py-10 lg:py-32 mx-auto lg:w-6/12'>
                         <h2 className='text-xl lg:text-3xl font-semibold font-serif'><span className='text-6xl text-slate-600'>G</span>et what you need.</h2>
